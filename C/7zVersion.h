@@ -13,9 +13,9 @@
 #define MY_DATE "2022-07-15"
 #undef MY_COPYRIGHT
 #undef MY_VERSION_COPYRIGHT_DATE
-#define MY_AUTHOR_NAME "Igor Pavlov"
-#define MY_COPYRIGHT_PD "Igor Pavlov : Public domain"
-#define MY_COPYRIGHT_CR "Copyright (c) 1999-2022 Igor Pavlov"
+#define MY_AUTHOR_NAME "PeaceShi"
+#define MY_COPYRIGHT_PD "PeaceShi - Kongying Tavern"
+#define MY_COPYRIGHT_CR "Copyright (c) 1999-2022 Kongying Tavern"
 
 #ifdef USE_COPYRIGHT_CR
   #define MY_COPYRIGHT MY_COPYRIGHT_CR
