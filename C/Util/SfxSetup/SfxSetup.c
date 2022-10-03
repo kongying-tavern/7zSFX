@@ -42,6 +42,7 @@ static const char * const kExts[] =
 
 static const char * const kNames[] =
 {
+    "MiniInstaller",
     "setup"
   , "install"
   , "run"
