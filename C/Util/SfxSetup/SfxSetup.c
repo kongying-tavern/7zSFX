@@ -303,7 +303,8 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
   {
     unsigned i;
     DWORD d;
-    winRes = GetTempPathW(MAX_PATH, path);
+    winRes = GetCurrentDirectory(MAX_PATH, path);
+    wcscat(path, WSTRING_PATH_SEPARATOR);
     if (winRes == 0 || winRes > MAX_PATH)
       return 1;
     pathLen = wcslen(path);
