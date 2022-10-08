@@ -1,4 +1,4 @@
-PROG = 7zS2.sfx
+PROG = 7zS2C.sfx
 MY_FIXED = 1
 
 C_OBJS = \

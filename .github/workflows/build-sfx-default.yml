@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: windows-2022
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: init
       working-directory: ${{github.workspace}}
       shell: pwsh
@@ -30,7 +30,7 @@ jobs:
           cd .\C\Util\SfxSetup\
           nmake
           mt -manifest SfxSetup.manifest -outputresource:".\x86\7zS2.sfx;#1"
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: 7zS2
         path: |
