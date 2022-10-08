@@ -1,10 +1,18 @@
-name: build-sfx
-on: [push, pull_request]
+name: build-sfx-default-currentdir
+
+on: 
+  push:
+    branches:
+      - current-dir
+  pull_request:
+    branches:
+      - current-dir
+
 jobs:
   build:
     runs-on: windows-2022
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: init
       working-directory: ${{github.workspace}}
       shell: pwsh
@@ -22,13 +30,9 @@ jobs:
           call "VC-LTL helper for nmake.cmd"
           cd .\C\Util\SfxSetup\
           nmake
+          mt -manifest SfxSetup.manifest -outputresource:".\x86\7zS2C.sfx;#1"
     - uses: actions/upload-artifact@v3
       with:
-        name: 7zSFX
-        path: |
-            .\C\Util\SfxSetup\x86\7zS2.sfx
-    - uses: actions/upload-artifact@v3
-      with:
-        name: 7zSFX-CurrentDir
+        name: 7zS2C
         path: |
             .\C\Util\SfxSetup\x86\7zS2C.sfx
