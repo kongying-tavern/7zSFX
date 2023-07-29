@@ -11,13 +11,15 @@ jobs:
   build:
     runs-on: windows-2022
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
     - name: init
       working-directory: ${{github.workspace}}
       shell: pwsh
       run: |
           mkdir -p Tools
-          Invoke-WebRequest -Uri https://github.com/Chuyu-Team/VC-LTL5/releases/download/v5.0.5/VC-LTL-5.0.5-Binary.7z -OutFile Tools\VC-LTL.7z
+          Invoke-WebRequest -Uri https://github.com/Chuyu-Team/VC-LTL5/releases/download/v5.0.8/VC-LTL-5.0.8-Binary.7z -OutFile Tools\VC-LTL.7z
           7z x Tools\VC-LTL.7z -y -oTools\
           cp ".\Tools\VC-LTL helper for nmake.cmd" ./
     - name: build
